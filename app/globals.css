@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Livepeer Brand Colors */
+  --livepeer-green: #07fbb2;
+  --livepeer-green-dark: #53b9ab;
+  --livepeer-black: #131716;
+  --livepeer-gray: #282828;
+  --livepeer-purple: #7B5ED4;
+  --livepeer-white: #FFFFFF;
+  
+  /* System Colors */
+  --background: var(--livepeer-white);
+  --foreground: var(--livepeer-black);
+  --accent: var(--livepeer-green);
+}
+
+/* Custom Fonts */
+@font-face {
+  font-family: 'At Surt';
+  src: url('/fonts/AtSurt-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Favoritpro';
+  src: url('/fonts/Favoritpro-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: var(--livepeer-black);
+    --foreground: var(--livepeer-white);
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'At Surt', 'Favoritpro', Arial, sans-serif;
+}
+
+.contributor-card {
+  background-image: url('/images/card-bg.webp');
+  background-size: cover;
+  background-position: center;
+}
