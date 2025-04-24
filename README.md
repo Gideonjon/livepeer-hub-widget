@@ -40,7 +40,8 @@ Add the widget to your website with a single line of code:
 <script src="https://your-widget-domain.com/embed.js"></script>
 ```
 
-### Custom Configuration
+### Custom Configuration 
+
 ```html
 <script 
   src="https://your-widget-domain.com/embed.js"

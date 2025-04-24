@@ -1,7 +1,7 @@
 "use client"
 
 import { useSearchParams } from "next/navigation"
-import { ContributorsWidget } from "@/components/ContributorsWidget"
+import { ContributorsWidget } from "@/app/components/ContributorsWidget"
 
 export default function WidgetPage() {
   const searchParams = useSearchParams()

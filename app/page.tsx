@@ -1,5 +1,5 @@
-import { ContributorsWidget } from "@/components/ContributorsWidget"
-import { WidgetDemo } from "@/components/WidgetDemo"
+import { ContributorsWidget } from "@/app/components/ContributorsWidget"
+import { WidgetDemo } from "@/app/components/WidgetDemo"
 
 export default function Home() {
   return (
