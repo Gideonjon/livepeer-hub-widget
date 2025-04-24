@@ -8,31 +8,37 @@
   --livepeer-green-dark: #53b9ab;
   --livepeer-black: #131716;
   --livepeer-gray: #282828;
-  --livepeer-purple: #7B5ED4;
-  --livepeer-white: #FFFFFF;
-  
+  --livepeer-purple: #7b5ed4;
+  --livepeer-white: #ffffff;
+
   /* System Colors */
-  --background: var(--livepeer-white);
-  --foreground: var(--livepeer-black);
+  --background: var(--livepeer-black);
+  --foreground: var(--livepeer-white);
   --accent: var(--livepeer-green);
+
+  /* shadcn/ui colors */
+  --primary: var(--livepeer-green);
+  --primary-foreground: var(--livepeer-black);
+
+  --secondary: var(--livepeer-gray);
+  --secondary-foreground: var(--livepeer-white);
+
+  --muted: var(--livepeer-gray);
+  --muted-foreground: #d9d9d9;
+
+  --accent: var(--livepeer-green-dark);
+  --accent-foreground: var(--livepeer-white);
+
+  --destructive: #ff4d4f;
+  --destructive-foreground: var(--livepeer-white);
+
+  --border: var(--livepeer-gray);
+  --input: var(--livepeer-gray);
+  --ring: var(--livepeer-green);
+
+  --radius: 0.5rem;
 }
 
-/* Custom Fonts */
-@font-face {
-  font-family: 'At Surt';
-  src: url('/fonts/AtSurt-Regular.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Favoritpro';
-  src: url('/fonts/Favoritpro-Regular.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-}
-
-/* Dark Mode */
 @media (prefers-color-scheme: dark) {
   :root {
     --background: var(--livepeer-black);
@@ -43,11 +49,44 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: 'At Surt', 'Favoritpro', Arial, sans-serif;
+  font-family: var(--font-space-grotesk), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", sans-serif;
 }
 
+/* Custom styling for the contributor card */
 .contributor-card {
-  background-image: url('/images/card-bg.webp');
-  background-size: cover;
-  background-position: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.contributor-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #07fbb2, #7b5ed4);
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.contributor-card:hover::before {
+  opacity: 1;
+}
+
+/* Custom styling for switches */
+.switch-thumb {
+  display: block;
+  width: 1.25rem;
+  height: 1.25rem;
+  background-color: white;
+  border-radius: 9999px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.switch[data-state="checked"] .switch-thumb {
+  transform: translateX(1.25rem);
 }
