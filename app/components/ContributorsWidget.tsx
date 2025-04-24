@@ -13,17 +13,24 @@ export function ContributorsWidget({
   const [contributors, setContributors] = useState<Contributor[]>([]);
   const [displayedContributors, setDisplayedContributors] = useState<Contributor[]>([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     async function fetchContributors() {
       try {
-        const response = await fetch('https://contributors-spotlight.vercel.app/api/contributors');
+        const response = await fetch('/api/contributors');
+        if (!response.ok) throw new Error('Failed to fetch contributors');
+        
         const data = await response.json();
+        if (!Array.isArray(data)) throw new Error('Invalid data format');
+
         setContributors(data);
         setDisplayedContributors(getRandomContributors(data, maxDisplay));
-        setLoading(false);
-      } catch (error) {
-        console.error('Failed to fetch contributors:', error);
+        setError(null);
+      } catch (err) {
+        console.error('Failed to fetch contributors:', err);
+        setError('Failed to load contributors');
+      } finally {
         setLoading(false);
       }
     }
@@ -50,7 +57,23 @@ export function ContributorsWidget({
   if (loading) {
     return (
       <div className="flex items-center justify-center h-64">
-        <div className="animate-spin rounded-full h-8 w-8 border-2 border-[#00A55F]" />
+        <div className="animate-spin rounded-full h-12 w-12 border-4 border-[#07fbb2] border-t-transparent" />
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="flex items-center justify-center h-64 text-[#D9D9D9]">
+        <p>{error}</p>
+      </div>
+    );
+  }
+
+  if (!displayedContributors.length) {
+    return (
+      <div className="flex items-center justify-center h-64 text-[#D9D9D9]">
+        <p>No contributors found</p>
       </div>
     );
   }

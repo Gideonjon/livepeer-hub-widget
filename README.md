@@ -1,48 +1,61 @@
 # Livepeer Contributors Widget
 
-A responsive and customizable widget that showcases Livepeer's community contributors. Built with Next.js and styled to match Livepeer's design system.
+A responsive and customizable widget that showcases Livepeer's community contributors.
 
-![Widget Preview](public/widget-preview.png)
+## Quick Integration
 
-## Features
-
-- 🎯 Randomly displays contributors from the Livepeer community
-- 🔄 Auto-rotates to showcase different contributors
-- 🌗 Supports light and dark modes
-- 📱 Fully responsive design
-- ⚡ Optimized performance with Next.js
-
-## Quick Start
-
-### Installation
-
-Add the widget to your website by including this script:
+Add the widget to your website with a single line of code:
 
 ```html
-<div id="livepeer-contributors"></div>
-<script src="https://your-widget-url.com/embed.js"></script>
-```
-
-### Configuration
-
-The widget accepts several configuration options:
-
-```html
-<div 
-  id="livepeer-contributors"
+<script 
+  src="https://your-widget-domain.com/embed.js"
   data-max-display="1"
   data-auto-rotate="true"
   data-rotation-interval="5000"
   data-randomize="true"
-></div>
+></script>
 ```
+
+### Configuration Options
 
 | Option | Type | Default | Description |
 |--------|------|---------|-------------|
-| data-max-display | number | 1 | Number of contributors to show |
+| data-max-display | number | 1 | Number of contributors to display |
 | data-auto-rotate | boolean | true | Enable auto-rotation |
 | data-rotation-interval | number | 5000 | Rotation interval in ms |
-| data-randomize | boolean | true | Randomize initial selection |
+| data-randomize | boolean | true | Randomize contributor selection |
+
+## Features
+
+✅ Randomized Selection: Fair exposure for all contributors
+✅ Auto-Rotation: Showcase different contributors automatically
+✅ Responsive Design: Adapts to any screen size
+✅ Easy Integration: Single line of code to embed
+✅ Livepeer Styling: Matches Livepeer's design system
+
+## Examples
+
+### Basic Integration
+```html
+<script src="https://your-widget-domain.com/embed.js"></script>
+```
+
+### Custom Configuration
+```html
+<script 
+  src="https://your-widget-domain.com/embed.js"
+  data-max-display="3"
+  data-rotation-interval="3000"
+></script>
+```
+
+### Fixed Display (No Rotation)
+```html
+<script 
+  src="https://your-widget-domain.com/embed.js"
+  data-auto-rotate="false"
+></script>
+```
 
 ## Development
 
