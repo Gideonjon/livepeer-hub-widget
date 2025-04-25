@@ -80,12 +80,12 @@ npm run dev
 ```
 
 4. Test the widget:
-- Visit `http://localhost:3000/test` to see different widget configurations
+- Visit `http://localhost:3000/testing` to see different widget configurations
 - Visit `http://localhost:3000/widget` to see the standalone widget
 
 ## Testing
 
-The widget can be tested locally using the test page at `/test`. This page demonstrates various configurations:
+The widget can be tested locally using the test page at `/testing`. This page demonstrates various configurations:
 - Basic widget
 - Dark theme widget
 - Custom configuration widget
