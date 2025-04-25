@@ -7,23 +7,22 @@ A responsive and customizable widget that showcases Livepeer's community contrib
 Add the widget to your website with a single line of code:
 
 ```html
-<script 
-  src="https://your-widget-domain.com/embed.js"
-  data-max-display="1"
-  data-auto-rotate="true"
-  data-rotation-interval="5000"
-  data-randomize="true"
-></script>
+<iframe
+  src="https://livepeer-hub-widget.vercel.app/widget"
+  style="border: none; width: 100%; height: 400px; max-width: 600px; border-radius: 12px; overflow: hidden;"
+  title="Livepeer Contributors Spotlight"
+></iframe>
 ```
 
 ### Configuration Options
 
 | Option | Type | Default | Description |
 |--------|------|---------|-------------|
-| data-max-display | number | 1 | Number of contributors to display |
-| data-auto-rotate | boolean | true | Enable auto-rotation |
-| data-rotation-interval | number | 5000 | Rotation interval in ms |
-| data-randomize | boolean | true | Randomize contributor selection |
+| maxDisplay | number | 1 | Number of contributors to display |
+| autoRotate | boolean | true | Enable auto-rotation |
+| rotationInterval | number | 5000 | Rotation interval in milliseconds |
+| randomize | boolean | true | Randomize contributor selection |
+| theme | string | 'light' | Widget theme ('light' or 'dark') |
 
 ## Features
 
@@ -32,30 +31,35 @@ Add the widget to your website with a single line of code:
 ✅ Responsive Design: Adapts to any screen size
 ✅ Easy Integration: Single line of code to embed
 ✅ Livepeer Styling: Matches Livepeer's design system
+✅ Dark/Light Theme Support
 
 ## Examples
 
 ### Basic Integration
 ```html
-<script src="https://your-widget-domain.com/embed.js"></script>
+<iframe
+  src="https://livepeer-hub-widget.vercel.app/widget"
+  style="border: none; width: 100%; height: 400px; max-width: 600px; border-radius: 12px; overflow: hidden;"
+  title="Livepeer Contributors Spotlight"
+></iframe>
 ```
 
-### Custom Configuration 
-
+### Dark Theme
 ```html
-<script 
-  src="https://your-widget-domain.com/embed.js"
-  data-max-display="3"
-  data-rotation-interval="3000"
-></script>
+<iframe
+  src="https://livepeer-hub-widget.vercel.app/widget?theme=dark"
+  style="border: none; width: 100%; height: 400px; max-width: 600px; border-radius: '12px'; overflow: hidden;"
+  title="Livepeer Contributors Spotlight - Dark Theme"
+></iframe>
 ```
 
-### Fixed Display (No Rotation)
+### Custom Configuration
 ```html
-<script 
-  src="https://your-widget-domain.com/embed.js"
-  data-auto-rotate="false"
-></script>
+<iframe
+  src="https://livepeer-hub-widget.vercel.app/widget?maxDisplay=3&autoRotate=true&rotationInterval=3000&randomize=true&theme=light"
+  style="border: none; width: 100%; height: 400px; max-width: 600px; border-radius: 12px; overflow: hidden;"
+  title="Livepeer Contributors Spotlight - Custom Config"
+></iframe>
 ```
 
 ## Development
@@ -70,15 +74,21 @@ git clone https://github.com/your-username/livepeer-contributors-widget.git
 npm install
 ```
 
-3. Create a `.env` file:
-```bash
-cp .env.example .env
-```
-
-4. Start the development server:
+3. Start the development server:
 ```bash
 npm run dev
 ```
+
+4. Test the widget:
+- Visit `http://localhost:3000/test` to see different widget configurations
+- Visit `http://localhost:3000/widget` to see the standalone widget
+
+## Testing
+
+The widget can be tested locally using the test page at `/test`. This page demonstrates various configurations:
+- Basic widget
+- Dark theme widget
+- Custom configuration widget
 
 ## Contributing
 
