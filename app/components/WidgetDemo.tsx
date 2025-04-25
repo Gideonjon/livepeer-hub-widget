@@ -27,13 +27,13 @@ export function WidgetDemo() {
   const rotationIntervalMs = rotationInterval * 1000
 
   const iframeCode = `<iframe
-  src="https://your-widget-domain.com/widget?maxDisplay=${maxDisplay}&autoRotate=${autoRotate}&rotationInterval=${rotationIntervalMs}&randomize=${randomize}&theme=${theme}"
+  src="https://livepeer-hub-widget.vercel.app/widget?maxDisplay=${maxDisplay}&autoRotate=${autoRotate}&rotationInterval=${rotationIntervalMs}&randomize=${randomize}&theme=${theme}"
   style="border: none; width: 100%; height: 400px; max-width: 600px; border-radius: 12px; overflow: hidden;"
   title="Livepeer Contributors Spotlight"
 ></iframe>`
 
   const scriptCode = `<script
-  src="https://your-widget-domain.com/embed.js?maxDisplay=${maxDisplay}&autoRotate=${autoRotate}&rotationInterval=${rotationIntervalMs}&randomize=${randomize}&theme=${theme}"
+  src="https://livepeer-hub-widget.vercel.app/embed.js?maxDisplay=${maxDisplay}&autoRotate=${autoRotate}&rotationInterval=${rotationIntervalMs}&randomize=${randomize}&theme=${theme}"
   async
 ></script>`
 
