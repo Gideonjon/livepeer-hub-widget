@@ -1,6 +1,6 @@
 # Livepeer Contributors Widget
 
-A responsive and customizable widget that showcases Livepeer's community contributors.
+A detailed responsive and customizable widget that showcases Livepeer's community contributors.
 
 ## Quick Integration
 
